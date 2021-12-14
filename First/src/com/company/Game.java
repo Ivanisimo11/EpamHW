@@ -13,6 +13,7 @@ public class Game {
         int hiddenNumber = rand(min, max);
         int counter = 0;
         while (true) {
+            System.out.println("Число находиться в диапазоне " + min + " - " + max);
             int scan = scanner.nextInt();
             while (scan > max || scan < min) {
                 System.out.println("Введите число в укзаном вами диапазоне");
@@ -23,9 +24,11 @@ public class Game {
                 System.out.println(counter + " попыток потрачено");
                 break;
             } else if (scan < hiddenNumber) {
-                System.out.println("загаданное чисто больше");
+                System.out.println("загаданное число больше");
+                min = scan;
             } else {
-                System.out.println("загаданное чисто меньше");
+                System.out.println("загаданное число меньше");
+                max = scan;
             }
         }
 
